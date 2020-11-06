@@ -24,7 +24,17 @@
               <ve-map v-if="item.name == 'map'" :data="chartMapData"></ve-map>
             </li>
           </ul>
-          <div v-if="otherIsShow">Other</div>
+          <div class="swiper-box" v-if="otherIsShow">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-png1">1</div>
+                <div class="swiper-slide swiper-png2">2</div>
+                <div class="swiper-slide swiper-png3">3</div>
+                <div class="swiper-slide swiper-png4">4</div>
+                <div class="swiper-slide swiper-png5">5</div>
+              </div>
+            </div>
+          </div>
         </el-main>
       </el-container>
       <el-footer height="50px">FOOTER</el-footer>
@@ -32,6 +42,7 @@
   </div>
 </template>
 <script>
+import Swiper from "swiper";
 export default {
   name: "",
   mixins: "",
@@ -88,7 +99,11 @@ export default {
   computed: {},
   watch: {},
   created() {},
-  mounted() {},
+  mounted() {
+    this.$nextTick(() => {
+      this.initSwiper();
+    });
+  },
   destroyed() {},
   methods: {
     selectMenu(index, indexPath) {
@@ -102,6 +117,13 @@ export default {
           this.otherIsShow = true;
           break;
       }
+    },
+    initSwiper() {
+      let mySwiper = new Swiper(".swiper-container", {
+        // observer: true,
+        initialSlide: 2,
+        // autoplay: true,
+      });
     },
   },
 };
@@ -126,6 +148,32 @@ export default {
             width: 30%;
             margin-right: 3%;
             float: left;
+          }
+        }
+        .swiper-box {
+          width: 500px;
+          height: 250px;
+          padding: 30px;
+          .swiper-container {
+            width: 100%;
+            height: 100%;
+            .swiper-wrapper {
+              .swiper-png1 {
+                background: url("../../assets/1.png");
+              }
+              .swiper-png2 {
+                background: url("../../assets/2.png");
+              }
+              .swiper-png3 {
+                background: url("../../assets/3.png");
+              }
+              .swiper-png4 {
+                background: url("../../assets/4.png");
+              }
+              .swiper-png5 {
+                background: url("../../assets/5.png");
+              }
+            }
           }
         }
       }

@@ -5,8 +5,13 @@ import store from './store';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import VCharts from 'v-charts';
+import Swiper from 'vue-awesome-swiper';
+import 'swiper/swiper-bundle.css';
+
+
 Vue.use(ElementUI);
-Vue.use(VCharts)
+Vue.use(VCharts);
+Vue.use(Swiper);
 Vue.config.productionTip = false
 
 new Vue({
