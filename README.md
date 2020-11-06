@@ -14,3 +14,4 @@
 7. 项目打包    
 `npm run build`
 
+8.项目说明：联系vCharts和elementUI引入等
