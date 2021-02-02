@@ -9,6 +9,7 @@ import Swiper from 'vue-awesome-swiper';
 import 'swiper/swiper-bundle.css';
 
 
+
 Vue.use(ElementUI);
 Vue.use(VCharts);
 Vue.use(Swiper);
